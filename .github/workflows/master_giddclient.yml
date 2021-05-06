@@ -25,13 +25,12 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        npm run test --if-present
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: node-app
-        path: .
+        path: ./client
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +52,4 @@ jobs:
         app-name: 'giddclient'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_4b7d0722eb22427fb5a44a36d9613812 }}
-        package: .
+        package: ./client
