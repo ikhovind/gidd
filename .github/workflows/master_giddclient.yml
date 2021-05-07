@@ -53,4 +53,4 @@ jobs:
         app-name: 'giddclient'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_4b7d0722eb22427fb5a44a36d9613812 }}
-        package: ./client
+        package: .
